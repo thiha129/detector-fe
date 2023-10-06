@@ -3,6 +3,13 @@ import BarChartVersion1 from '../Chart/BarChartVersion1'
 import BarChartVersion2 from '../Chart/BarChartVersion2'
 
 export default function Home() {
+  const a = []
+  a.push('1')
+  const b = a
+
+  console.log('====================================')
+  console.log('b', b)
+  console.log('====================================')
   const onSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
     axios.get('http://detector.com:8071/api/v1/crawl').then((response) => {
@@ -46,7 +53,7 @@ export default function Home() {
             </form>
           </div>
           <div className='lg:col-span-5 lg:col-start-1 justify-center'>
-            <BarChartVersion1 />
+            <BarChartVersion1 product={b} />
             <BarChartVersion2 />
           </div>
         </div>

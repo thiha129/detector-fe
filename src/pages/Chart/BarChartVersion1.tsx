@@ -60,8 +60,13 @@ const data = [
     fourth_column: 'Amsterdam[1]'
   }
 ]
+interface Props {
+  product: Object
+}
 
-const BarChartVersion1 = () => {
+const BarChartVersion1 = ({ product }: Props) => {
+  console.log('product', product)
+
   return (
     <ResponsiveContainer width='100%' height='60%' aspect={2}>
       <BarChart
